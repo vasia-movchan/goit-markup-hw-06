@@ -472,13 +472,58 @@
     </footer>
 
     <!-- Бэкдроп и модальное окно -->
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidde" data-modal>
       <div class="modal">
+        <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
         <button type="button" class="icon-close-modal" data-modal-close>
-          <svg class="clients-icon" width="12" height="12">
+          <svg class="close-modal-icon" width="12" height="12">
             <use href="./images/icons.svg#icon-close-modal"></use>
           </svg>
         </button>
+        <form>
+          <label class="form-label"
+            >Имя
+            <input type="text" name="user-name" class="input" />
+            <svg class="input-icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-form-person"></use>
+            </svg>
+          </label>
+
+          <label class="form-label"
+            >Телефон
+            <input type="tel" name="user-phone" class="input" />
+            <svg class="input-icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-form-phone"></use>
+            </svg>
+          </label>
+
+          <label class="form-label"
+            >Почта
+            <input type="email" name="user-email" class="input" />
+            <svg class="input-icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-form-email"></use>
+            </svg>
+          </label>
+
+          <label class="form-label"
+            >Комментарий
+            <textarea
+              name="user-comment"
+              class="form-comment"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+
+          <div class="confirm">
+            <label class="confirm-label">
+              <input type="checkbox" name="confirm" class="checkbox" />
+              <span class="checkbox-icon"></span>
+              <span>Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="confirm-btn">Отправить</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
