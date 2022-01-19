@@ -24,6 +24,8 @@
   --footer-bg-color: #2f303a;
   --join-icon-bg-color: rgba(255, 255, 255, 0.1);
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --icon-close-modal-first-color: #000000;
+  --icon-close-modal-second-color: #2196f3;
 }
 
 body {
@@ -71,6 +73,19 @@ ul {
   padding-right: 15px;
   margin: 0 auto;
   /* outline: 1px solid black; */
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 /* ---------------LOGO-------------- */
@@ -636,16 +651,164 @@ ul {
 
 .modal {
   position: absolute;
-  width: 528px;
-  height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateY(0px);
+  width: 528px;
+  height: 581px;
+  padding: 40px;
   background-color: var(--bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms var(--cubic);
+}
+
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.form-label {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+}
+
+.input {
+  display: block;
+  height: 40px;
+  margin-top: 4px;
+  padding-left: 42px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  transition: border 250ms var(--cubic);
+}
+
+.input:focus {
+  border: 1px solid var(--icon-close-modal-second-color);
+}
+
+.input:focus + .input-icon {
+  fill: var(--icon-close-modal-second-color);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(0);
+  transition: fill 250ms var(--cubic);
+}
+
+.form-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  resize: none;
+  transition: border 250ms var(--cubic);
+}
+
+.form-comment:focus {
+  border: 1px solid var(--icon-close-modal-second-color);
+}
+
+.form-comment::placeholder {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.confirm {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.confirm-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.checkbox:checked + .checkbox-icon {
+  background-color: var(--icon-close-modal-second-color);
+  border-color: var(--icon-close-modal-second-color);
+  background-image: url(../images/icons/checkbox2.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.confirm-label {
+  line-height: calc(24 / 14);
+}
+
+.confirm-link {
+  display: inline;
+}
+
+.confirm-btn {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: var(--btn-color);
+  border: none;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--btn-text-first-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+}
+
+.confirm-btn:hover,
+.confirm-btn:focus {
+  background-color: var(--btn-color-hover);
 }
 
 .icon-close-modal {
@@ -661,6 +824,17 @@ ul {
   border-radius: 50%;
   background-color: var(--bg-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--icon-close-modal-first-color);
+  transition: color 250ms var(--cubic);
+}
+
+.icon-close-modal:hover,
+.icon-close-modal:hover {
+  color: var(--icon-close-modal-second-color);
+}
+
+.close-modal-icon {
+  fill: currentColor;
 }
 
 /* -----------------PORTFOLIO--------------------- */
