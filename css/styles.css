@@ -207,7 +207,10 @@ ul {
     url('../images/hero.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1600px;
+  max-width: 1600px;
+  background-size: cover;
+  height: 600px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -263,10 +266,8 @@ ul {
 
 .advantage-icon-bg {
   display: flex;
-  padding-top: 25px;
-  padding-right: 100px;
-  padding-bottom: 25px;
-  padding-left: 100px;
+  justify-content: center;
+  align-items: center;
   height: 120px;
   margin-bottom: 30px;
   background-color: var(--advantage-item-bg);
@@ -535,7 +536,7 @@ ul {
 
 /* ============= SUBSCRIPTION ================= */
 .subscription {
-  margin-left: 93px;
+  margin-left: auto;
 }
 
 .subscription-form {
@@ -674,12 +675,16 @@ ul {
 }
 
 .form-label {
-  position: relative;
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
+}
+
+.input-wrap {
+  position: relative;
+  display: block;
 }
 
 .input {
@@ -707,7 +712,7 @@ ul {
   position: absolute;
   top: 50%;
   left: 15px;
-  transform: translateY(0);
+  transform: translateY(-50%);
   transition: fill 250ms var(--cubic);
 }
 
